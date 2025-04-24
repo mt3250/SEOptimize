@@ -1,0 +1,1177 @@
+// This file structure represents the key components of our AI Content Optimizer SaaS
+
+// FILE: src/app/page.tsx
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import PricingSection from '@/components/PricingSection';
+
+export default function Home() {
+  const router = useRouter();
+  
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <main className="flex-grow">
+        <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Optimize Your Content With AI
+              </h1>
+              <p className="text-xl mb-8">
+                Get higher rankings, more traffic, and better engagement with our AI-powered 
+                content optimization platform.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => router.push('/dashboard')}
+                  className="bg-white text-indigo-600 hover:bg-gray-100 text-lg font-semibold py-3 px-8 rounded-lg transition duration-300"
+                >
+                  Try For Free
+                </button>
+                <button
+                  onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 text-lg font-semibold py-3 px-8 rounded-lg transition duration-300"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Why Choose SEOptimize?</h2>
+            <div className="grid md:grid-cols-3 gap-10">
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Real-time SEO Analysis</h3>
+                <p className="text-gray-600">
+                  Get instant feedback on your content's SEO performance with actionable recommendations for improvement.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">AI-Powered Suggestions</h3>
+                <p className="text-gray-600">
+                  Our advanced AI engine provides smart suggestions to optimize your content for both readers and search engines.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Easy Integration</h3>
+                <p className="text-gray-600">
+                  Seamlessly integrate with your existing workflow using our API, browser extensions, or direct content imports.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How It Works</h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center mb-16">
+                <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                    <span className="text-gray-500 text-lg">Step 1 Image</span>
+                  </div>
+                </div>
+                <div className="md:w-1/2">
+                  <h3 className="text-2xl font-semibold mb-4">1. Paste Your Content</h3>
+                  <p className="text-gray-600">
+                    Simply paste your article, blog post, or page content into our editor, or import directly from your CMS.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row-reverse items-center mb-16">
+                <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                    <span className="text-gray-500 text-lg">Step 2 Image</span>
+                  </div>
+                </div>
+                <div className="md:w-1/2">
+                  <h3 className="text-2xl font-semibold mb-4">2. Get AI Analysis</h3>
+                  <p className="text-gray-600">
+                    Our AI engine analyzes your content for SEO factors, readability, engagement potential, and more.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                  <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                    <span className="text-gray-500 text-lg">Step 3 Image</span>
+                  </div>
+                </div>
+                <div className="md:w-1/2">
+                  <h3 className="text-2xl font-semibold mb-4">3. Optimize & Implement</h3>
+                  <p className="text-gray-600">
+                    Apply the suggested changes, regenerate sections with AI assistance, and watch your content performance improve.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <PricingSection />
+        
+        {/* Testimonials */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">What Our Users Say</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                  <div>
+                    <h4 className="font-semibold">Sarah Johnson</h4>
+                    <p className="text-gray-600 text-sm">Content Manager</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "SEOptimize has transformed our content strategy. We've seen a 43% increase in organic traffic since implementing their AI recommendations."
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                  <div>
+                    <h4 className="font-semibold">Mark Williams</h4>
+                    <p className="text-gray-600 text-sm">SEO Specialist</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "As an SEO professional, I've tried dozens of tools. SEOptimize provides the most actionable insights by far, saving me hours of manual optimization work."
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                  <div>
+                    <h4 className="font-semibold">Emily Chen</h4>
+                    <p className="text-gray-600 text-sm">Freelance Writer</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "This tool has become an essential part of my writing process. It's like having an SEO expert review every piece before I submit it to clients."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-indigo-600 text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Optimize Your Content?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Join thousands of content creators, marketers, and businesses that are ranking higher and getting more traffic with SEOptimize.
+            </p>
+            <button
+              onClick={() => router.push('/signup')}
+              className="bg-white text-indigo-600 hover:bg-gray-100 text-lg font-semibold py-3 px-8 rounded-lg transition duration-300"
+            >
+              Get Started For Free
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+// FILE: src/components/PricingSection.tsx
+import React from 'react';
+import { CheckIcon } from '@heroicons/react/24/solid';
+
+const PricingSection = () => {
+  return (
+    <section id="pricing" className="py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Simple, Transparent Pricing</h2>
+        <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          Choose the plan that fits your needs. All plans include a 14-day free trial.
+        </p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Basic Plan */}
+          <div className="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition duration-300">
+            <h3 className="text-2xl font-bold mb-4">Basic</h3>
+            <div className="mb-6">
+              <span className="text-4xl font-bold">$29</span>
+              <span className="text-gray-600">/month</span>
+            </div>
+            <p className="text-gray-600 mb-6">Perfect for freelancers and small blogs.</p>
+            <ul className="mb-8 space-y-3">
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>25 content optimizations/month</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Basic SEO analysis</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Keyword suggestions</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Readability analysis</span>
+              </li>
+            </ul>
+            <button className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+              Start Free Trial
+            </button>
+          </div>
+          
+          {/* Pro Plan */}
+          <div className="border-2 border-indigo-600 rounded-xl p-8 shadow-lg relative">
+            <div className="absolute top-0 right-0 bg-indigo-600 text-white py-1 px-4 rounded-bl-lg rounded-tr-lg text-sm font-semibold">
+              MOST POPULAR
+            </div>
+            <h3 className="text-2xl font-bold mb-4">Pro</h3>
+            <div className="mb-6">
+              <span className="text-4xl font-bold">$79</span>
+              <span className="text-gray-600">/month</span>
+            </div>
+            <p className="text-gray-600 mb-6">Ideal for growing businesses and content teams.</p>
+            <ul className="mb-8 space-y-3">
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>100 content optimizations/month</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Advanced SEO analysis</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Competitor content analysis</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>AI content enhancement</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Plagiarism detection</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Content performance tracking</span>
+              </li>
+            </ul>
+            <button className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+              Start Free Trial
+            </button>
+          </div>
+          
+          {/* Business Plan */}
+          <div className="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition duration-300">
+            <h3 className="text-2xl font-bold mb-4">Business</h3>
+            <div className="mb-6">
+              <span className="text-4xl font-bold">$199</span>
+              <span className="text-gray-600">/month</span>
+            </div>
+            <p className="text-gray-600 mb-6">For agencies and large content operations.</p>
+            <ul className="mb-8 space-y-3">
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Unlimited content optimizations</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>All Pro features</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>API access</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>White-label reports</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Priority support</span>
+              </li>
+              <li className="flex items-center">
+                <CheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                <span>Custom integrations</span>
+              </li>
+            </ul>
+            <button className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
+
+// FILE: src/app/dashboard/page.tsx
+"use client";
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import ContentAnalyzer from '@/components/ContentAnalyzer';
+import ResultsPanel from '@/components/ResultsPanel';
+import DashboardSidebar from '@/components/DashboardSidebar';
+import DashboardHeader from '@/components/DashboardHeader';
+
+export default function Dashboard() {
+  const [content, setContent] = useState('');
+  const [keywords, setKeywords] = useState('');
+  const [results, setResults] = useState(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const router = useRouter();
+
+  const handleAnalyze = async () => {
+    // Don't analyze if no content or if already analyzing
+    if (!content.trim() || isAnalyzing) return;
+    
+    setIsAnalyzing(true);
+    
+    try {
+      const response = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          content,
+          keywords: keywords.split(',').map(k => k.trim()).filter(k => k),
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to analyze content');
+      }
+      
+      const data = await response.json();
+      setResults(data);
+    } catch (error) {
+      console.error('Error analyzing content:', error);
+      // Handle error state
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
+
+  return (
+    <div className="flex h-screen bg-gray-100">
+      <DashboardSidebar />
+      
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <DashboardHeader />
+        
+        <main className="flex-1 overflow-y-auto p-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="p-6">
+                <h1 className="text-2xl font-bold mb-6">Content Optimizer</h1>
+                
+                <ContentAnalyzer 
+                  content={content}
+                  setContent={setContent}
+                  keywords={keywords}
+                  setKeywords={setKeywords}
+                  onAnalyze={handleAnalyze}
+                  isAnalyzing={isAnalyzing}
+                />
+                
+                {results && <ResultsPanel results={results} />}
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+// FILE: src/components/ContentAnalyzer.tsx
+import React from 'react';
+
+interface ContentAnalyzerProps {
+  content: string;
+  setContent: (content: string) => void;
+  keywords: string;
+  setKeywords: (keywords: string) => void;
+  onAnalyze: () => void;
+  isAnalyzing: boolean;
+}
+
+const ContentAnalyzer: React.FC<ContentAnalyzerProps> = ({
+  content,
+  setContent,
+  keywords,
+  setKeywords,
+  onAnalyze,
+  isAnalyzing
+}) => {
+  return (
+    <div className="mb-8">
+      <div className="mb-4">
+        <label htmlFor="keywords" className="block text-sm font-medium text-gray-700 mb-1">
+          Target Keywords (comma separated)
+        </label>
+        <input
+          id="keywords"
+          type="text"
+          value={keywords}
+          onChange={(e) => setKeywords(e.target.value)}
+          placeholder="e.g. content optimization, SEO, digital marketing"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+      
+      <div className="mb-4">
+        <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
+          Your Content
+        </label>
+        <textarea
+          id="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Paste your content here to analyze..."
+          rows={12}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+      
+      <div className="flex justify-between items-center">
+        <div className="text-sm text-gray-500">
+          {content.length > 0 ? `${content.length} characters | ~${Math.ceil(content.length / 5)} words` : 'No content to analyze'}
+        </div>
+        <button
+          onClick={onAnalyze}
+          disabled={!content.trim() || isAnalyzing}
+          className={`px-6 py-2 rounded-md font-medium ${
+            !content.trim() || isAnalyzing
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              : 'bg-indigo-600 text-white hover:bg-indigo-700'
+          } transition duration-300`}
+        >
+          {isAnalyzing ? 'Analyzing...' : 'Analyze Content'}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ContentAnalyzer;
+
+// FILE: src/components/ResultsPanel.tsx
+import React, { useState } from 'react';
+import { 
+  CheckCircleIcon, 
+  ExclamationCircleIcon,
+  LightBulbIcon,
+  DocumentTextIcon,
+  ArrowPathIcon
+} from '@heroicons/react/24/outline';
+
+interface ResultsPanelProps {
+  results: any; // Type this properly based on your API response
+}
+
+const ResultsPanel: React.FC<ResultsPanelProps> = ({ results }) => {
+  const [activeTab, setActiveTab] = useState('overview');
+  
+  // Placeholder scores for demo
+  const overallScore = results?.overallScore || 78;
+  const seoScore = results?.seoScore || 72;
+  const readabilityScore = results?.readabilityScore || 85;
+  const engagementScore = results?.engagementScore || 76;
+  
+  // Color based on score
+  const getScoreColor = (score: number) => {
+    if (score >= 80) return 'text-green-500';
+    if (score >= 60) return 'text-yellow-500';
+    return 'text-red-500';
+  };
+  
+  return (
+    <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+      <h2 className="text-xl font-bold mb-6">Content Analysis Results</h2>
+      
+      {/* Score Overview */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div className="bg-white p-4 rounded-lg shadow-sm">
+          <div className="text-sm text-gray-500 mb-1">Overall Score</div>
+          <div className={`text-3xl font-bold ${getScoreColor(overallScore)}`}>{overallScore}/100</div>
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-sm">
+          <div className="text-sm text-gray-500 mb-1">SEO Score</div>
+          <div className={`text-3xl font-bold ${getScoreColor(seoScore)}`}>{seoScore}/100</div>
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-sm">
+          <div className="text-sm text-gray-500 mb-1">Readability Score</div>
+          <div className={`text-3xl font-bold ${getScoreColor(readabilityScore)}`}>{readabilityScore}/100</div>
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-sm">
+          <div className="text-sm text-gray-500 mb-1">Engagement Score</div>
+          <div className={`text-3xl font-bold ${getScoreColor(engagementScore)}`}>{engagementScore}/100</div>
+        </div>
+      </div>
+      
+      {/* Tabs */}
+      <div className="border-b border-gray-200 mb-6">
+        <nav className="flex -mb-px">
+          <button
+            onClick={() => setActiveTab('overview')}
+            className={`mr-8 py-4 text-sm font-medium ${
+              activeTab === 'overview'
+                ? 'text-indigo-600 border-b-2 border-indigo-600'
+                : 'text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            Overview
+          </button>
+          <button
+            onClick={() => setActiveTab('seo')}
+            className={`mr-8 py-4 text-sm font-medium ${
+              activeTab === 'seo'
+                ? 'text-indigo-600 border-b-2 border-indigo-600'
+                : 'text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            SEO Analysis
+          </button>
+          <button
+            onClick={() => setActiveTab('readability')}
+            className={`mr-8 py-4 text-sm font-medium ${
+              activeTab === 'readability'
+                ? 'text-indigo-600 border-b-2 border-indigo-600'
+                : 'text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            Readability
+          </button>
+          <button
+            onClick={() => setActiveTab('suggestions')}
+            className={`py-4 text-sm font-medium ${
+              activeTab === 'suggestions'
+                ? 'text-indigo-600 border-b-2 border-indigo-600'
+                : 'text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            AI Suggestions
+          </button>
+        </nav>
+      </div>
+      
+      {/* Tab Content */}
+      <div className="mb-8">
+        {activeTab === 'overview' && (
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Content Summary</h3>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Key Findings</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span>Good overall structure with proper headings and paragraphs</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span>Content length is appropriate for the topic (1,200 words)</span>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span>Primary keyword density is below recommended range (0.8%)</span>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span>Some sentences are too complex, affecting readability</span>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span>Missing meta description suggestion</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <h4 className="font-medium mb-3">Quick Wins</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <LightBulbIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Add 2-3 more instances of your primary keyword</span>
+                  </li>
+                  <li className="flex items-start">
+                    <LightBulbIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Break down 3 complex sentences in the middle section</span>
+                  </li>
+                  <li className="flex items-start">
+                    <LightBulbIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Add a compelling meta description (150-160 characters)</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <h4 className="font-medium mb-3">Content Health</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Keyword Optimization</span>
+                      <span className="text-sm text-yellow-500">72%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '72%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Content Structure</span>
+                      <span className="text-sm text-green-500">87%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: '87%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Readability</span>
+                      <span className="text-sm text-green-500">85%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: '85%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Content Depth</span>
+                      <span className="text-sm text-yellow-500">68%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '68%' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        
+        {activeTab === 'seo' && (
+          <div>
+            <h3 className="text-lg font-semibold mb-4">SEO Analysis</h3>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Keyword Analysis</h4>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Keyword</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Count</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Density</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">content optimization</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.8%</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                          Low
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">SEO</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.1%</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          Good
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">digital marketing</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.3%</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          Good
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Technical SEO Checks</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Title Tag</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      "Content Optimization Guide: Boost Your SEO Rankings in 2025" (62 characters)
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Meta Description</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Missing. Add a compelling description between 150-160 characters.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">URL Structure</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      "/blog/content-optimization-guide" - Good: short, descriptive, includes keyword
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Heading Structure</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      1 H1, 5 H2s, 3 H3s - Good hierarchical structure
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Images</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      2 of 4 images missing alt text
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Internal Links</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      6 internal links with descriptive anchor text
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">External Links</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Only 1 external link - consider adding 2-3 more high-quality sources
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+        
+        {activeTab === 'readability' && (
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Readability Analysis</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <h4 className="font-medium mb-3">Readability Scores</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Flesch Reading Ease</span>
+                      <span className="text-sm text-green-500">65.2</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: '65.2%' }}></div>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">Score of 60-70 is ideal for general audience</p>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Flesch-Kincaid Grade</span>
+                      <span className="text-sm text-green-500">8.3</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{ width: '83%' }}></div>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">Grade level 7-9 is ideal for general audience</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <h4 className="font-medium mb-3">Content Statistics</h4>
+                <ul className="space-y-2">
+                  <li className="flex justify-between">
+                    <span className="text-gray-600">Word Count:</span>
+                    <span className="font-medium">1,243</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span className="text-gray-600">Sentence Count:</span>
+                    <span className="font-medium">64</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span className="text-gray-600">Avg. Sentence Length:</span>
+                    <span className="font-medium">19.4 words</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span className="text-gray-600">Paragraphs:</span>
+                    <span className="font-medium">22</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span className="text-gray-600">Avg. Paragraph Length:</span>
+                    <span className="font-medium">56.5 words</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Content Enhancement Opportunities</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Complex Sentences</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Found 8 sentences exceeding 25 words. Consider breaking these into shorter sentences.
+                    </p>
+                    <div className="mt-2 p-3 bg-yellow-50 rounded text-sm">
+                      <span className="font-medium">Example:</span> "The implementation of comprehensive content optimization strategies, including keyword research, content structure analysis, and readability improvements, can significantly enhance the visibility of your digital assets and improve your search engine rankings in the increasingly competitive online landscape."
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Passive Voice</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      17% of sentences use passive voice (11 instances). Aim for less than 10%.
+                    </p>
+                    <div className="mt-2 p-3 bg-yellow-50 rounded text-sm">
+                      <span className="font-medium">Example:</span> "The content was analyzed by our team to identify optimization opportunities."
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Transition Words</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      31% of sentences contain transition words. Good job! (Recommended: 30%+)
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <ExclamationCircleIcon className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium">Paragraph Length</span>
+                    <p className="text-sm text-gray-600 mt-1">
+                      4 paragraphs contain more than 100 words. Consider breaking these into smaller paragraphs for better readability.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+        
+        {activeTab === 'suggestions' && (
+          <div>
+            <h3 className="text-lg font-semibold mb-4">AI Content Enhancement</h3>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Meta Description Suggestions</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Based on your content, here are 3 optimized meta descriptions you can use:
+              </p>
+              <div className="space-y-4">
+                <div className="p-3 bg-gray-50 rounded border border-gray-200">
+                  <p className="text-sm">
+                    "Discover proven content optimization strategies to boost your SEO rankings in 2025. Learn keyword research, structure tips, and engagement tactics for better results."
+                  </p>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+                <div className="p-3 bg-gray-50 rounded border border-gray-200">
+                  <p className="text-sm">
+                    "Master content optimization with our comprehensive guide. Improve readability, keyword usage, and technical SEO to climb search rankings and drive more organic traffic."
+                  </p>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+                <div className="p-3 bg-gray-50 rounded border border-gray-200">
+                  <p className="text-sm">
+                    "Want higher SEO rankings? Our content optimization guide provides actionable tactics for creating engaging content that ranks well in 2025 and beyond."
+                  </p>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm mb-6">
+              <h4 className="font-medium mb-3">Introduction Enhancement</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Your introduction could be stronger. Here's an AI-generated alternative that incorporates your keywords:
+              </p>
+              <div className="p-3 bg-gray-50 rounded border border-gray-200 mb-4">
+                <p className="text-sm">
+                  Content optimization has become the cornerstone of successful digital marketing strategies in 2025. As search engines continue to refine their algorithms, the difference between ranking on page one or page ten often comes down to how well your content is optimized. This comprehensive guide explores proven techniques to enhance your content's visibility, engagement, and conversion potential—without sacrificing quality or reader experience. Whether you're an SEO veteran or just starting your digital marketing journey, these actionable strategies will help you create content that satisfies both search engines and your audience.
+                </p>
+              </div>
+              <div className="flex justify-end">
+                <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                  Replace Introduction
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm">
+              <div className="flex justify-between items-center mb-3">
+                <h4 className="font-medium">Complex Sentence Improvements</h4>
+                <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
+                  <ArrowPathIcon className="h-4 w-4 mr-1" />
+                  Fix All Complex Sentences
+                </button>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Here are simplified versions of your most complex sentences:
+              </p>
+              <div className="space-y-6">
+                <div>
+                  <div className="p-3 bg-yellow-50 rounded border border-yellow-200 mb-2">
+                    <p className="text-sm font-medium">Original:</p>
+                    <p className="text-sm mt-1">
+                      "The implementation of comprehensive content optimization strategies, including keyword research, content structure analysis, and readability improvements, can significantly enhance the visibility of your digital assets and improve your search engine rankings in the increasingly competitive online landscape."
+                    </p>
+                  </div>
+                  <div className="p-3 bg-green-50 rounded border border-green-200">
+                    <p className="text-sm font-medium">Improved:</p>
+                    <p className="text-sm mt-1">
+                      "Implementing comprehensive content optimization strategies can significantly boost your visibility online. These strategies include keyword research, content structure analysis, and readability improvements. Together, they will improve your search engine rankings in today's competitive digital landscape."
+                    </p>
+                  </div>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                      Replace Sentence
+                    </button>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="p-3 bg-yellow-50 rounded border border-yellow-200 mb-2">
+                    <p className="text-sm font-medium">Original:</p>
+                    <p className="text-sm mt-1">
+                      "When considering the multifaceted aspects of search engine optimization that contribute to improved content performance, it's essential to analyze both on-page factors such as keyword usage, header optimization, and content structure, as well as off-page elements including backlink profiles and social signals."
+                    </p>
+                  </div>
+                  <div className="p-3 bg-green-50 rounded border border-green-200">
+                    <p className="text-sm font-medium">Improved:</p>
+                    <p className="text-sm mt-1">
+                      "To improve content performance, you must analyze both on-page and off-page SEO factors. On-page factors include keyword usage, header optimization, and content structure. Off-page elements include backlink profiles and social signals. All are essential to consider."
+                    </p>
+                  </div>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                      Replace Sentence
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      
+      {/* Actions */}
+      <div className="flex justify-between">
+        <button className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors">
+          <DocumentTextIcon className="h-5 w-5 mr-2" />
+          Export Report (PDF)
+        </button>
+        <button className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors">
+          Apply All Suggestions
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ResultsPanel;
+
+// FILE: src/components/DashboardSidebar.tsx
+import React from 'react';
+import Link from 'next/link';
+import { 
+  HomeIcon,
+  DocumentTextIcon,
+  ChartBarIcon,
+  CogIcon,
+  UserGroupIcon,
+  QuestionMarkCircleIcon,
+  ArrowLeftOnRectangleIcon
+} from '@heroicons/react/24/outline';
+
+const DashboardSidebar = () => {
+  return (
+    <div className="bg-indigo-800 text-white w-64 flex-shrink-0 hidden md:block">
+      <div className="h-full flex flex-col">
+        <div className="p-4 border-b border-indigo-700">
+          <h1 className="text-xl font-bold">SEOptimize</h1>
+        </div>
+        
+        <nav className="flex-1 p-4">
+          <ul className="space-y-1">
+            <li>
+              <Link 
+                href="/dashboard" 
+                className="flex items-center px-4 py-2 rounded-md bg-indigo-900 font-medium"
+              >
+                <HomeIcon className="h-5 w-5 mr-3" />
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/dashboard/optimizer" 
+                className="flex items-center px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+              >
+                <DocumentTextIcon className="h-5 w-5 mr-3" />
+                Content Optimizer
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/dashboard/analytics" 
+                className="flex items-center px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+              >
+                <ChartBarIcon className="h-5 w-5 mr-3" />
+                Analytics
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/dashboard/team" 
+                className="flex items-center px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+              >
+                <UserGroupIcon className="h-5 w-5 mr-3" />
+                Team Members
+              </Link>
+            </li>
+          </ul>
+          
+          <div className="mt-8">
+            <h3 className="px-4 text-xs font-semibold text-indigo-300 uppercase tracking-wider">
+              Settings
+            </h3>
+            <ul className="mt-2 space-y-1">
+              <li>
+                <Link 
+                  href="/dashboard/settings" 
+                  className="flex items-center px-4 py-2 text-indigo-100 rounded-md hover:bg-indigo-700 transition-colors"
+                >
+                  <CogIcon className="h-5 w-5 mr-3" />
+                  Account Settings
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/dashboard/help" 
+                  className="flex items-center px-4 py-2 text-indigo-100 rounded-md hover:bg-indigo-700 transition-colors"
+                >
+                  <QuestionMarkCircleIcon className="h-5 w-5 mr-3" />
+                  Help & Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        
+        <div className="p-4 border-t border-indigo-700">
+          <button className="flex items-center px-4 py-2 w-full text-indigo-100 rounded-md hover:bg-indigo-700 transition-colors">
+            <ArrowLeftOnRectangleIcon className="h-5 w-5 mr-3" />
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardSidebar;
+
+// FILE: src/components/DashboardHeader.tsx
+import React from 'react';
+import { BellIcon, Bars3Icon } from '@heroicons/react/24/outline';
+
+const DashboardHeader = () => {
+  return (
+    <header className="bg-white shadow">
+      <div className="flex justify-between items-center px-4 py-4">
+        <div className="md:hidden">
+          <button className="text-gray-600 hover:text-gray-900">
+            <Bars3Icon className="h-6 w-6" />
+          </button>
+        </div>
+        
+        <div className="flex-1 flex justify-end items-center space-x-4">
+          <button className="text-gray-600 hover:text-gray-900 relative">
+            <BellIcon className="h-6 w-6" />
+            <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"></span>
+          </button>
+          
+          <div className="flex items-center">
+            <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-medium">
+              JD
+            </div>
+            <span className="ml-2 font-medium text-gray-700 hidden sm:inline-block">John Doe</span>
+          </div>
+        </div>
+      </div>
